@@ -1,0 +1,284 @@
+*{box-sizing:border-box}
+
+:root {
+  --color-0: #f6f6f7; /* lightest: background*/
+  --color-1: #dbdbde;
+  --color-2: #cacace; 
+  --color-3: #72727c; 
+  --color-4: #515159; /* darkest */
+
+  --sidebar-bg: var(--color-2);
+  --header-bg: var(--color-3);
+}
+
+body {
+  margin: 0;
+  background-color: #f3f3f3;
+  font-family: sans-serif;
+  color: var(--color-4);
+}
+
+.wrapper {
+  max-width: 1245px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0, .15);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: minmax(50px, auto);
+  grid-template-areas:
+    "photo header"
+    "aside main"
+    "aside main"
+}
+
+.wrapper > * {
+  padding: 1.5em;
+  --main-side-padding: 2.5em
+}
+
+figure {
+  margin: 0;
+  grid-area: photo;
+  background-color: var(--header-bg);
+  text-align: center;
+}
+img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 100%;
+  background-color: #53626a;
+}
+a {
+  color: var(--color-4);
+}
+
+header {
+  grid-area: header;
+  background-color: var(--header-bg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+header * {
+  margin: 0;
+  text-align: center;
+}
+header h1 {
+  letter-spacing: .1em
+}
+header h2 {
+  font-weight: 100;
+  font-size: 1.2em;
+  opacity: .7;
+  margin-top: .5em
+}
+
+aside {
+  grid-area: aside;
+  background-color: var(--sidebar-bg);
+}
+.wrapper main {
+  grid-area: main;
+  padding-right: var(--main-side-padding);
+  padding-left: var(--main-side-padding);
+}
+main h2 {
+  text-transform: uppercase;
+}
+
+ul {
+  padding-left: 1.2em;
+  margin-left: 0;
+}
+
+li {
+  margin: .5em 0;
+  border-radius: 5px;
+}
+li::before {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+main h2 {
+  background-color: var(--color-2);
+  padding: .25em;
+  border-radius: 5px;
+  margin-top: 2em
+}
+main h2:first-child {
+  margin-top: 0;
+}
+
+main h3 {
+  margin: 0;
+  display: flex;
+}
+main h3 span:last-child {
+  padding-left: 1em;
+  margin-left: auto;
+}
+
+main h3~p {
+  opacity: .8;
+  font-style: oblique;
+  margin-top: .2em;
+}
+
+/* Work History */
+.work-history {
+  list-style: none;
+  padding-left: 0;
+}
+
+.work-history li ul {
+  margin: 0 0 3em;
+  padding-left: 0em;
+}
+.work-history li li {
+  list-style: none;
+  position: relative;
+  padding: .25em .25em;
+  padding-left: .75em;
+  background-color: var(--color-1);
+
+}
+.work-history li li::before {
+  content: '';
+  display: block;
+  width: .2em;
+  height: 1em;
+  background-color: var(--color-3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.work-history .multi-column {
+  column-count: 3;
+}
+.work-history .multi-column li {
+  display: inline-block;
+  width: 100%;
+  margin: .25em 0;
+}
+.work-history .flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1em;
+}
+.work-history .flex-list li {
+  flex: 1 1 auto;
+  margin: .25em 0 .25em 1em;
+}
+
+/* Skills */
+
+.skills {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.skills > li {
+  list-style: none;
+  
+  flex: 1;
+  padding-right: 1em;
+}
+
+.skills > li ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  /* background-color: #E9EEF1; */
+}
+.skills > li li {
+  display: inline-block;
+  padding: .25em .5em;
+  margin: .1em;
+  background-color: var(--color-3);
+  color: white;
+}
+
+
+/* Sidebar */
+aside h2 {
+  margin-top: 2em;
+}
+aside h2:first-child {
+  margin-top: 0;
+}
+aside ul {
+  padding-left: 0em;
+}
+aside li {
+  list-style: none;
+  position: relative;
+  padding: .25em .25em;
+  padding-left: .75em;
+  background-color: rgba(255,255,255, .3)
+}
+aside li::before {
+  content: '';
+  display: block;
+  width: .2em;
+  height: 1em;
+  background-color: var(--color-3);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "photo header"
+      "main main"
+      "aside aside"
+  }
+  img {
+    max-width: 75px;
+  }
+  .work-history .multi-column {
+    column-count: 2
+  }
+  .wrapper > main {
+    padding: 1.5em;
+  }
+}
+@media (max-width: 560px) {
+  .wrapper {
+    grid-template-areas:
+      "photo photo"
+      "header header"
+      "main main"
+      "aside aside"
+  }
+  .skills {
+    display: block;
+  }
+  .skills h3 {
+    margin-top: 1.5em;
+  }
+  header h1 {
+    font-size: 1.5em
+  }
+  header h2 {
+    font-size: .9em
+  }
+}
+
+@media (max-width: 350px) {
+  .work-history .multi-column {
+    column-count: auto
+  }
+}
