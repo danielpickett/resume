@@ -1,0 +1,14 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:danielpickett/resume.git",
+  "author": "Daniel Pickett <daniel.pickett@availity.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start --server src --watch --no-notify"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.10"
+  }
+}
