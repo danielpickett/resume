@@ -6,7 +6,7 @@
   "author": "Daniel Pickett <daniel.pickett@availity.com>",
   "license": "MIT",
   "scripts": {
-    "start": "browser-sync start --server src --watch --no-notify"
+    "start": "browser-sync start --server --watch --no-notify"
   },
   "devDependencies": {
     "browser-sync": "^2.27.10"

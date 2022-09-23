@@ -15,12 +15,22 @@
 
   --sidebar-bg: var(--color-200);
   --header-bg: var(--color-300);
+
+  /* --my-name-color: green; */
+
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 body {
   margin: 0;
   background-color: var(--color-050);
   color: var(--color-400);
+}
+@media print {
+  :root {
+    font-size: 0.875rem;
+  }
 }
 
 h1,
@@ -31,8 +41,12 @@ h5 {
   font-family: 'Playfair Display', serif;
 }
 
+.page-break {
+  page-break-before: always;
+}
+
 .page {
-  max-width: 1200px;
+  max-width: 840px;
   margin: 0 auto;
 
   display: grid;
@@ -107,10 +121,6 @@ li {
   margin: 0.5em 0;
   border-radius: 5px;
 }
-li::before {
-  /* border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px; */
-}
 
 main h2 {
   margin-top: 2em;
@@ -138,6 +148,10 @@ main h3 ~ p {
 .work-history {
   list-style: none;
   padding-left: 0;
+}
+
+.work-history li {
+  page-break-inside: avoid;
 }
 
 .work-history li ul {
@@ -250,7 +264,11 @@ aside h3 + p {
   font-style: italic;
 }
 
-@media (max-width: 900px) {
+/* .my-name {
+  color: var(--my-name-color);
+} */
+
+/* @media (max-width: 900px) {
   .page {
     grid-template-columns: auto auto;
     grid-template-areas:
@@ -294,4 +312,4 @@ aside h3 + p {
   .work-history .multi-column {
     column-count: auto;
   }
-}
+} */
