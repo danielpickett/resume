@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://danielpickett.github.io/resume",
+  "homepage": "https://danielpickett.github.io/resume",
   "scripts": {
     "start": "nodemon --watch src -e ts,tsx,scss --exec \"yarn build\" & yarn preview",
     "build": "yarn copy-assets && yarn build-html && yarn build-styles",
