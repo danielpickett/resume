@@ -1,0 +1,7 @@
+@import './components/SkillChip/SkillChip.scss';
+
+.Skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

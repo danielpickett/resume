@@ -1,0 +1,12 @@
+@import '../../../../tokens';
+
+.WorkHistoryEntry {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.125rem solid $color-200;
+    margin: 0;
+    margin-bottom: 0.125rem;
+    padding-bottom: 0.125rem;
+  }
+}

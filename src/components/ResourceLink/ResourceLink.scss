@@ -1,0 +1,11 @@
+@import '../../tokens';
+
+.ResourceLink {
+  &__resource {
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: $color-400;
+  }
+}

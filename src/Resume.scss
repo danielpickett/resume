@@ -1,0 +1,35 @@
+.Resume {
+  display: flex;
+  gap: 4rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  @media print {
+    margin-top: 0;
+  }
+
+  &__header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  &__main-content {
+    flex: 1 1 70%;
+  }
+
+  &__sidebar {
+    flex: 1 1 30%;
+  }
+
+  &__contact-links {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  &__divider {
+    border-bottom: 0.125rem solid $color-200;
+    margin-bottom: 0.5rem;
+  }
+}

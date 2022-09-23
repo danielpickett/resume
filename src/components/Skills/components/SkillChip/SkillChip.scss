@@ -1,0 +1,12 @@
+@import '../../../../tokens';
+
+.SkillChip {
+  display: block;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25rem;
+  color: white;
+  border: 0.0625rem solid $color-300;
+  background-color: $color-300;
+  white-space: nowrap;
+}

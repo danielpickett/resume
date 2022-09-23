@@ -1,0 +1,27 @@
+$arrow-size: 0.325rem;
+
+.SidebarBullets {
+  list-style-type: none;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+
+  &__bullet {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0.25rem;
+      left: -1rem;
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+
+      border-top: $arrow-size solid transparent;
+      border-bottom: $arrow-size solid transparent;
+
+      border-left: $arrow-size solid currentColor;
+    }
+  }
+}

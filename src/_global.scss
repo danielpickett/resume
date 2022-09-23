@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  // background-color: var(--color-050);
+  color: var(--color-400);
+}
+
+a,
+a:link,
+a:visited {
+  color: $color-400;
+}
+@media print {
+  :root {
+    font-size: 0.875rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+h3 {
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
